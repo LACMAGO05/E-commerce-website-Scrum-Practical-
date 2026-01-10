@@ -1,0 +1,114 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page background */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7ff, #eef2ff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signup card */
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.auth-container h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 25px;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+.auth-form input {
+  height: 48px;
+  padding: 0 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.auth-form input::placeholder {
+  color: #9ca3af;
+}
+
+.auth-form input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Button */
+.btn {
+  height: 50px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.35);
+}
+
+/* Footer text */
+.auth-container p {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Link */
+.auth-container a {
+  color: #4f46e5;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 30px 25px;
+    border-radius: 12px;
+  }
+
+  .auth-container h2 {
+    font-size: 22px;
+  }
+}
