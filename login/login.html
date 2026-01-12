@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.css" />
-    <title>Login Page</title>
-  </head>
-  <body>
-    <div class="main-box">
-      <div class="main-box__left">
-        <img class="main-box__img"  src="./img/login.jpg"/>
-      </div>
-      <div class="main-box__right">
-        <h2>Log in to Exclusive</h2>
-        <p>Enter the details below</p>
-        <form class="form">
-          <div class="form__input-group">
-            <input type="text" id="email" name="email" placeholder="Email or Phone number" required />
-          </div>
-          <div class="form__input-group">
-            <input type="password" id="password" name="password" placeholder="Password" required />
-          </div>
-          <div class="form__actions">
-              <button type="submit" class="form__login-button">Log In</button>
-              <a href="#"  class="form__forgot-password">Forgot password?</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | E-Shop</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+
+    <div class="auth-image">
+      <div class="overlay">
+        <h1>E-Shop</h1>
+        <p>Welcome back. Let’s continue shopping.</p>
       </div>
     </div>
-  </body>
+
+    <div class="auth-form-wrapper">
+      <div class="auth-container">
+
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Log in to your account</p>
+
+        <form class="auth-form">
+
+          <div class="input-group">
+            <input type="email" required />
+            <label>Email Address</label>
+          </div>
+
+          <div class="input-group">
+            <input type="password" required />
+            <label>Password</label>
+          </div>
+
+          <button class="btn">Log In</button>
+
+          <div class="forgot-password">
+            <a href="/forgot-password.html">Forgot Password?</a>
+          </div>
+
+        </form>
+
+        <p class="footer-text">
+          Don’t have an account?
+          <a href="/signup/signup.html">Sign Up</a>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
 </html>

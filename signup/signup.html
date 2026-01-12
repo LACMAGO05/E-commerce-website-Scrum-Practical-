@@ -2,22 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sign Up | ShopEase</title>
+  <title>Sign Up | E-Shop</title>
   <link rel="stylesheet" href="signup.css" />
 </head>
 <body>
-  <div class="auth-container">
-    <h2>Create Account</h2>
+  <div class="auth-wrapper">
+    
+    <div class="auth-image">
+      <div class="overlay">
+        <h1>E-Shop</h1>
+        <p>Smart shopping starts here</p>
+      </div>
+    </div>
 
-    <form class="auth-form">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button class="btn">Sign Up</button>
-    </form>
+    <div class="auth-form-wrapper">
+      <div class="auth-container">
+        <h2>Create Account</h2>
+        <p class="subtitle">Join E-Shop today</p>
 
-    <p>Already have an account? <a href="login.html">Login</a></p>
+        <form class="auth-form">
+          <div class="input-group">
+            <input type="text" required />
+            <label>Full Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="email" required />
+            <label>Email Address</label>
+          </div>
+
+          <div class="input-group">
+            <input type="password" required />
+            <label>Password</label>
+          </div>
+
+          <button class="btn">Create Account</button>
+        </form>
+
+        <p class="footer-text">
+          Already have an account?
+          <a href="/login/login.html">Login</a>
+        </p>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
-
