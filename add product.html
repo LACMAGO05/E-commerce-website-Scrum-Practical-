@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sidebar">
+        <h2 class="logo">ELEGANCE</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Dashboard Access</a></li>
+            <li><a href="#" class="active"><i class="fas fa-plus-circle"></i>Product management</a></li>
+            <li><a href="#"><i class="fas fa-box"></i>Customer management</a></li>
+            <li><a href="#"><i class="fas fa-box"></i>Inventory management</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Category & brand</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>payment management</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Security</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Add New Product</h1>
+        </header>
+        <main>
+            <div class="card">
+                <form id="product-form">
+                    <div class="form-group">
+                        <label for="p-name">Product Name</label>
+                        <input type="text" id="p-name" placeholder="e.g. Refrigerator" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="p-category">Category</label>
+                            <select id="p-category">
+                                <option>Communication and entertainment</option>
+                                <option>Lighting appliances </option>
+                                <option>cooling appliances</option>
+                                <option>Heating appliances</option>
+                                <option>kitchen appliances</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="p-price">Price (fcfa)</label>
+                            <input type="number" id="p-price" placeholder="50000" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="p-desc">Product Description</label>
+                        <textarea id="p-desc" rows="5" placeholder="Describe the elegance of this item..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="p-image">Product Image URL</label>
+                        <input type="url" id="p-image" placeholder="https://example.com/image.jpg">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Discard</button>
+                        <button type="submit" class="btn-primary">Publish Product</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elegance Admin | Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <nav class="sidebar">
+            <div class="sidebar-header">ELEGANCE</div>
+            <div class="nav-links">
+                <a href="#">Dashboard Access</a>
+                
+                <button class="dropdown-btn" id="prodBtn">Product Management ▾</button>
+                <div class="dropdown-container" id="prodMenu">
+                    <a href="add product.html">+ Add New Product</a>
+                    <a href="#">✎ Edit Product</a>
+                    <a href="#">🗑 Delete Product</a>
+                </div>
+
+                <a href="#">Customer Management</a>
+                <a href="#">Inventory Management</a>
+                <a href="#">Category & Brand</a>
+                <a href="#">Payment Management</a>
+                <a href="#">Security</a>
+                <a href="login.html" style="color: #f87171; margin-top: 50px;">Logout</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="header-bar">
+                <h1>Overview</h1>
+                <div>Admin: <strong>Jane Doe</strong></div>
+            </header>
+
+            <div class="stat-grid">
+                <div class="card"><h3>Total Sales</h3><div class="value">$42,900</div></div>
+                <div class="card"><h3>Active Users</h3><div class="value">1,152</div></div>
+                <div class="card"><h3>Pending Orders</h3><div class="value">24</div></div>
+                <div class="card"><h3>Inventory Status</h3><div class="value">Good</div></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle Dropdown Functionality
+        document.getElementById("prodBtn").addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = document.getElementById("prodMenu");
+            dropdownContent.classList.toggle("show");
+        });
+    </script>
+</body>
+</html>
