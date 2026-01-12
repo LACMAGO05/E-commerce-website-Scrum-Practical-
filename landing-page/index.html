@@ -5,33 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>E-shop</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
 </head>
 <body>
 
-<header>
+<header class="header">
     <div class="logo">E-Shop</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="login.html">Sign in</a>
-        <a href="signup.html">Sign up</a>
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="index.html">Home</a></li>
+            <li><a class="main-nav-link" href="shop.html">Shop</a></li>
+            <li><a class="main-nav-link nav-cta" href="login.html">Sign in</a></li>
+            <li><a class="main-nav-link nav-cta" href="signup.html">Sign up</a></li>
+        </ul>
+        
     </nav>
 </header>
 
 
 <section class="hero">
     <div class="hero-text">
-        <h1 class="hero-text-h1">Your Online Shopping Platform</h1>
-        <p>Discover products on electronics, fashion, gadgets and more.</p>
+        <h1 class="hero-text-h1">Shop Smarter. Get Everything Delivered Fast.</h1>
+        <p>Discover a wide range of high-quality products including electronics, fashion, gadgets, and home essentials, all in one easy-to-use online store.</p>
         <a href="shop.html" class="btn">Shop Now</a>
+        <a href="#categories" class="btn">Browse Categories</a>
     </div>
     <div class="hero-img">
-        <img src="images/hero.png" alt="Shopping Image">
+        <img src="images/landing-page.jpg" alt="Shopping Image">
     </div>
 </section>
 
 
-<section class="categories">
+<section class="categories" id="categories">
     <h2>Top Categories</h2>
 
     <div class="cat-grid">
@@ -50,12 +66,48 @@
     <div class="product-grid">
         <div class="product">
             <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <h4>iPhone</h4>
             <p>$350</p>
         </div>
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4></h4>
+            <img src="images/airpods.jpg">
+            <h4>Airpods</h4>
+            <p>$80</p>
+        </div>
+        <div class="product">
+            <img src="images/headset.jpg">
+            <h4>Headset</h4>
+            <p>$120</p>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product">
+            <img src="images/logitechkeyboard.jpg">
+            <h4>Logitech Keyboard</h4>
+            <p>$350</p>
+        </div>
+        <div class="product">
+            <img src="images/macbook.jpg">
+            <h4>MacBook</h4>
+            <p>$370</p>
+        </div>
+        <div class="product">
+            <img src="images/smartWatch.jpg">
+            <h4>Smart Watch</h4>
+            <p>$120</p>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product">
+            <img src="images/smartWatch.jpg">
+            <h4>Smart Watch</h4>
+            <p>$350</p>
+        </div>
+        <div class="product">
+            <img src="images/smartWatch.jpg">
+            <h4>Smart Watch</h4>
             <p>$80</p>
         </div>
         <div class="product">
@@ -68,90 +120,54 @@
     <div class="product-grid">
         <div class="product">
             <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <h4>iPhone</h4>
             <p>$350</p>
         </div>
         <div class="product">
             <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <h4>iPhone</h4>
             <p>$80</p>
         </div>
         <div class="product">
             <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <h4>iPhone</h4>
             <p>$120</p>
         </div>
     </div>
 
     <div class="product-grid">
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <img src="images/macbook.jpg">
+            <h4>Macbook</h4>
             <p>$350</p>
         </div>
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <img src="images/airpods.jpg">
+            <h4>Airpods</h4>
             <p>$80</p>
         </div>
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>iphone</h4>
+            <img src="images/headset.jpg">
+            <h4>Headset</h4>
             <p>$120</p>
         </div>
     </div>
 
     <div class="product-grid">
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>Smart VR Headset</h4>
+            <img src="images/headset.jpg">
+            <h4>Headset</h4>
             <p>$350</p>
         </div>
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>Wireless VR</h4>
+            <img src="images/smartWatch.jpg">
+            <h4>Smart Watch</h4>
             <p>$80</p>
         </div>
         <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>3D VR Set</h4>
-            <p>$120</p>
-        </div>
-    </div>
-
-    <div class="product-grid">
-        <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>Smart VR Headset</h4>
-            <p>$350</p>
-        </div>
-        <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>Wireless VR</h4>
+            <img src="images/smartWatch.jpg">
+            <h4>Smart Watch</h4>
             <p>$80</p>
-        </div>
-        <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>3D VR Set</h4>
-            <p>$120</p>
-        </div>
-    </div>
-
-    <div class="product-grid">
-        <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>Smart VR Headset</h4>
-            <p>$350</p>
-        </div>
-        <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>Wireless VR</h4>
-            <p>$80</p>
-        </div>
-        <div class="product">
-            <img src="images/pexels-jessbaileydesign-788946.jpg">
-            <h4>3D VR Set</h4>
-            <p>$120</p>
         </div>
     </div>
 </section>
@@ -165,7 +181,6 @@
         <button>Subscribe</button>
     </div>
 </section>
-
 
 <footer>
     <p>© 2025 E-shop. All rights reserved.</p>

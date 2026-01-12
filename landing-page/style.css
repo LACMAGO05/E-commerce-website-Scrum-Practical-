@@ -2,40 +2,79 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+
 }
 
 body {
-    background: #ffffff;
+    font-family: "Rubik", sans-serif;
     color: #222;
 }
 
 /* HEADER */
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
-    background: #fff;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    background-color: #0c0456;
+    padding: 0 4.8rem;
+    height: 6rem;
+    /* position: relative; */
 }
 
+
+
 .logo {
+    color: #ffffff;
     font-size: 24px;
     font-weight: bold;
 }
 
-nav a {
-    margin-left: 25px;
-    font-size: 15px;
+/* NAVIGATION */
+.main-nav-list {
+    list-style: none;
+    display: flex;
+    color: #ffffff;
+    gap: 28px;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
     text-decoration: none;
-    color: #333;
+    color:  #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #d2e446;
+}
+.nav-cta:link,
+.nav-cta:visited {
+    padding: 10px 22px;
+    border-radius: 9px;
 }
 
-nav a:hover {
-    color: #e44646;
+.main-nav-list li:nth-child(3) .nav-cta {
+  background: white;
+  color: #0c0456;
+  border: 2px solid #0c0456;
 }
 
+.main-nav-list li:nth-child(3) .nav-cta:hover {
+  background: #d2e446;
+  color: #ffffff;
+}
+
+.main-nav-list li:nth-child(4) .nav-cta {
+  background: white;
+  color: #0c0456;
+  border: 2px solid #0c0456;
+}
+
+.main-nav-list li:nth-child(4) .nav-cta:hover {
+  background: #d2e446;
+  color: #ffffff;
+}
 /* HERO SECTION */
 .hero {
     display: flex;
@@ -47,17 +86,21 @@ nav a:hover {
 
 .hero-text {
     max-width: 45%;
+    margin-bottom: 100px;
+    /* line-height: 40px; */
 }
 
 .hero-text h1 {
-    font-size: 46px;
+    font-size: 45px;
+    line-height: 50px;
     margin-bottom: 20px;
     color: #fff;
 }
 
 .hero-text p {
-    margin-bottom: 25px;
-    font-size: 17px;
+    line-height: 30px;
+    /* margin-bottom: 25px; */
+    font-size: 25px;
     color: #ffffff;
 }
 .hero-text a:link {
@@ -65,6 +108,8 @@ nav a:hover {
 }
 
 .btn {
+    margin-top: 40px;
+    display: inline-block;
     background: #d2e446;
     color: white;
     padding: 14px 30px;
@@ -72,14 +117,17 @@ nav a:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: 0.3s ease
+
 }
 
 .btn:hover {
-    background: #c23b3b;
+
+    transform: translate(0, -5px);
 }
 
 .hero-img img {
-    width: 450px;
+    width: 700px;
 }
 
 /* CATEGORIES */
