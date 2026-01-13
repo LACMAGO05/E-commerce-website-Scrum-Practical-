@@ -1,0 +1,84 @@
+
+* {
+	font-family: "Rubik";
+}
+body {
+    background-color: #0c0456;
+}
+
+.title-h2 {
+	padding-top: 30px;
+    color: #0c0456;
+}
+
+.shipping-h3 {
+	color: #000000;
+}
+
+
+.container {
+    margin: 0 auto;
+    background-color: #ffffff;
+	width: 700px;
+}
+
+.form {
+	color: #000;
+}
+
+.row5 {	
+	text-align: center;
+	padding: 50px;
+}
+
+.row1 > *, .row2 > *, .row3 > *, .row4 > *{
+	padding: 10px 5px; 
+	display: inline-block;
+}
+.row5 > * {
+    display: inline-block;
+    padding: 2px 30px;
+}
+
+.billing .row2 {
+	padding-top: 20px;
+}
+
+.form-shipping {
+	padding: 0 75px;
+}
+
+.label-form {
+	display: block;
+	padding-bottom: 5px;
+}
+
+.input-form[type=text] {
+	border: 1px solid gray;
+	padding: 5px;
+	width: 250px;
+	font-size: 16px;
+}
+
+.input-form[type=checkbox] + label {
+	display: inline;
+}
+
+button {
+	background-color: #0c0456;
+	border: none;
+	font-size: 16px;
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+	outline: none;
+    border-radius: 9px;
+}
+.go-back {
+    color: white;
+    text-decoration: none;  
+}
+button:hover {
+	background-color: #d2e446;
+}
+
