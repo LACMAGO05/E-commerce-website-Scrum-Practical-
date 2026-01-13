@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | E-Shop</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Rubik", sans-serif;
+            height: 100vh;
+        }
+
+        /* Layout */
+        .auth-wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Image Side */
+        .auth-image {
+            flex: 1;
+            background: #0c0456;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-image .overlay {
+            text-align: center;
+            color: #fff;
+        }
+
+        .auth-image h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: #d2e446;
+        }
+
+        .auth-image p {
+            margin-top: 10px;
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* Form Side */
+        .auth-form-wrapper {
+            flex: 1;
+            background: #f5f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Card */
+        .auth-container {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            padding: 42px 36px;
+            border-radius: 18px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-container h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0c0456;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 28px;
+        }
+
+        /* Form */
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Floating Inputs */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            height: 52px;
+            padding: 0 14px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            background: #f9fafb;
+            font-size: 14px;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 13px;
+            color: #999;
+            background: #fff;
+            padding: 0 6px;
+            pointer-events: none;
+            transition: 0.25s;
+        }
+
+        .input-group input:focus,
+        .input-group input:valid {
+            background: #fff;
+            border-color: #0c0456;
+        }
+
+        .input-group input:focus+label,
+        .input-group input:valid+label {
+            top: -6px;
+            font-size: 11px;
+            color: #0c0456;
+        }
+
+        /* Button */
+        .btn {
+            height: 52px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 14px;
+            background: #0c0456;
+            color: #d2e446;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1a0b8c;
+            box-shadow: 0 10px 20px rgba(12, 4, 86, 0.2);
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-text a {
+            color: #0c0456;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .auth-image {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-wrapper">
+
+        <div class="auth-image">
+            <div class="overlay">
+                <h1>E-Shop</h1>
+                <p>Your premium shopping destination.</p>
+            </div>
+        </div>
+
+        <div class="auth-form-wrapper">
+            <div class="auth-container">
+
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Log in to your account</p>
+
+                <form class="auth-form" action="/api/login" method="POST">
+
+                    <div class="input-group">
+                        <input type="email" name="email" required />
+                        <label>Email Address</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" required />
+                        <label>Password</label>
+                    </div>
+
+                    <button type="submit" class="btn">Log In</button>
+
+                </form>
+
+                <p class="footer-text">
+                    Don’t have an account?
+                    <a href="/signup">Sign Up</a>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

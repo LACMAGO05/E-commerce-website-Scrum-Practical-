@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product | E-Shop Admin</title>
+    <style>
+        :root {
+            --primary: #0c0456;
+            --accent: #d2e446;
+            --white: #ffffff;
+            --bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: var(--bg);
+        }
+
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: var(--primary);
+            color: white;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        .sidebar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            letter-spacing: 2px;
+            padding: 30px;
+            color: var(--accent);
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 15px 30px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            margin-left: 260px;
+            width: calc(100% - 260px);
+            min-height: 100vh;
+            padding: 50px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+        }
+
+        header h1 {
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 5px solid var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #fafafa;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: #fff;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--accent);
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-secondary {
+            background: #eee;
+            color: #666;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #1a0b8c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 class="logo">E-SHOP ADMIN</h2>
+        <ul>
+            <li><a href="/admin/dashboard">Dashboard Statistics</a></li>
+            <li><a href="/admin/add-product" class="active">Product Management</a></li>
+            <li><a href="/logout" style="color: #ff4f5a; margin-top: 50px;">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Add New Inventory Item</h1>
+        </header>
+        <main>
+            <div class="card">
+                <form id="product-form" action="/api/admin/add-product" method="POST">
+                    <div class="form-group">
+                        <label for="p-name">Product Name</label>
+                        <input type="text" name="name" id="p-name" placeholder="e.g. Ultra Gaming Headset" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="p-category">Category</label>
+                            <select name="category" id="p-category">
+                                <option>Electronics</option>
+                                <option>Home Appliances</option>
+                                <option>Fashion</option>
+                                <option>Accessories</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="p-price">Price (FCFA)</label>
+                            <input type="number" name="price" id="p-price" placeholder="150000" step="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="p-desc">Item Description</label>
+                        <textarea name="description" id="p-desc" rows="5"
+                            placeholder="Details about product quality and features..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="p-image">Image URL</label>
+                        <input type="url" name="image" id="p-image" placeholder="https://example.com/item-photo.jpg"
+                            required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="location.href='/admin/dashboard'">Cancel</button>
+                        <button type="submit" class="btn-primary">Add to Inventory</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

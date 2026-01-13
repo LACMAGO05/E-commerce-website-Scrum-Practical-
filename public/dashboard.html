@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | E-Shop</title>
+    <style>
+        :root {
+            --primary: #0c0456;
+            --accent: #d2e446;
+            --bg: #f5f7ff;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary);
+            padding: 0 4.8rem;
+            height: 6rem;
+            color: white;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border-top: 8px solid var(--accent);
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        .logout-btn {
+            background-color: #ff4f5a;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #e43f4a;
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border: 5px solid var(--accent);
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .profile-info p {
+            color: #777;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .update-photo-form {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .update-photo-form input {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 350px;
+            font-size: 14px;
+        }
+
+        .update-photo-form button {
+            background: var(--primary);
+            color: var(--accent);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .quick-links {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .quick-links a {
+            text-decoration: none;
+            background: var(--bg);
+            padding: 25px;
+            border-radius: 15px;
+            color: var(--primary);
+            text-align: center;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .quick-links a:hover {
+            background: var(--white);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 800px) {
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+
+            .update-photo-form {
+                flex-direction: column;
+            }
+
+            .update-photo-form input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo" style="font-size: 24px; font-weight: bold;">E-Shop</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/shop" style="margin-left: 30px;">Shop</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-header">
+            <h1 style="color: var(--primary);">My Profile Account</h1>
+            <button class="logout-btn" onclick="location.href='/logout'">Sign Out</button>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-img-container">
+                <img id="profilePic" src="https://via.placeholder.com/180" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h2 id="userName">User Name</h2>
+                <p id="userEmail">user@example.com</p>
+            </div>
+
+            <form class="update-photo-form" action="/api/user/update-profile" method="POST">
+                <input type="text" name="profile_pic" placeholder="Paste Profile Image URL here..." required>
+                <button type="submit">Update Avatar</button>
+            </form>
+
+            <div class="quick-links">
+                <a href="/shop">Go To Shop</a>
+                <a href="/cart">My Cart</a>
+                <a href="/">Home Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchUserData() {
+            try {
+                const response = await fetch('/api/user/me');
+                if (!response.ok) throw new Error('Unauthorized');
+                const user = await response.json();
+
+                document.getElementById('userName').textContent = user.name;
+                document.getElementById('userEmail').textContent = user.email;
+                if (user.profile_pic) {
+                    document.getElementById('profilePic').src = user.profile_pic;
+                }
+            } catch (err) {
+                window.location.href = '/login';
+            }
+        }
+        window.onload = fetchUserData;
+    </script>
+</body>
+
+</html>

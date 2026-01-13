@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shop | Your Cart</title>
+    <style>
+        :root {
+            --primary: #0c0456;
+            --accent: #d2e446;
+            --white: #ffffff;
+            --bg: #f5f7ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Rubik", sans-serif;
+            background: var(--bg);
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary);
+            padding: 0 4.8rem;
+            height: 6rem;
+            color: white;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-nav-list {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        .main-nav-link {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .main-nav-link:hover {
+            color: var(--accent);
+        }
+
+        .cart-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .cart-container h1 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .cart-items {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1.5fr 1fr 1fr auto;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-info h3 {
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .cart-summary {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            height: fit-content;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--accent);
+        }
+
+        .checkout {
+            width: 100%;
+            height: 55px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary);
+            color: var(--accent);
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .checkout:hover {
+            transform: translateY(-3px);
+            background: #1a0b8c;
+        }
+
+        @media (max-width: 900px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">E-Shop</div>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="/">Home</a></li>
+                <li><a class="main-nav-link" href="/shop">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart-container">
+        <h1>My Shopping Bag</h1>
+        <div class="cart-content">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="https://via.placeholder.com/100" alt="Product">
+                    <div class="item-info">
+                        <h3>Sample Tech Device</h3>
+                        <p>299,000 FCFA</p>
+                    </div>
+                    <div class="quantity" style="text-align: center;">Qty: 1</div>
+                    <span class="price" style="font-weight: bold;">299,000 FCFA</span>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Order Summary</h2>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <span>Total Items:</span>
+                    <span style="font-weight: bold;">1</span>
+                </div>
+                <div
+                    style="display: flex; justify-content: space-between; font-size: 20px; font-weight: bold; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+                    <span>Grand Total:</span>
+                    <span style="color: var(--primary);">299,000 FCFA</span>
+                </div>
+                <button class="checkout" onclick="location.href='/shipping'">Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | E-Shop</title>
+    <style>
+        :root {
+            --primary: #0c0456;
+            --accent: #d2e446;
+            --bg: #f5f7ff;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary);
+            padding: 0 4.8rem;
+            height: 6rem;
+            color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent);
+        }
+
+        /* SHOP CONTAINER */
+        .shop-container {
+            display: flex;
+            padding: 40px 60px;
+            gap: 40px;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            height: fit-content;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--accent);
+        }
+
+        .sidebar h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 8px 0;
+            cursor: pointer;
+            color: #555;
+            transition: 0.2s;
+        }
+
+        .sidebar li:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .shop-products {
+            flex: 1;
+        }
+
+        .shop-products h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-details {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-cart {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-details:hover {
+            background: #1a0b8c;
+        }
+
+        .btn-cart:hover {
+            filter: brightness(0.95);
+            transform: scale(1.02);
+        }
+
+        @media(max-width: 900px) {
+            .shop-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="/" class="logo">E-Shop</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/shop" class="active">Shop</a>
+            <a href="/dashboard">Profile</a>
+            <a href="/cart">Cart</a>
+        </nav>
+    </header>
+
+    <div class="shop-container">
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul>
+                <li>Smart Phones</li>
+                <li>Laptops</li>
+                <li>Gaming</li>
+                <li>Accessories</li>
+            </ul>
+
+            <h3>Filter by Price</h3>
+            <input type="range" min="10" max="2000" style="width: 100%; accent-color: var(--primary);">
+
+            <h3>Top Brands</h3>
+            <ul>
+                <li>Apple</li>
+                <li>Samsung</li>
+                <li>Logitech</li>
+                <li>Sony</li>
+            </ul>
+        </aside>
+
+        <section class="shop-products">
+            <h2>Our Collections</h2>
+            <div class="product-grid" id="productGrid">
+                <p>Loading products from catalog...</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        async function loadProducts() {
+            try {
+                const response = await fetch('/api/products');
+                const products = await response.json();
+                const grid = document.getElementById('productGrid');
+
+                if (products.length > 0) {
+                    grid.innerHTML = '';
+                    products.forEach(p => {
+                        grid.innerHTML += `
+                            <div class="product-card">
+                                <span class="category-tag">${p.category}</span>
+                                <img src="${p.image_url || 'https://via.placeholder.com/300x220'}" alt="${p.name}">
+                                <h4>${p.name}</h4>
+                                <p class="price">${p.price} FCFA</p>
+                                <div class="card-buttons">
+                                    <button class="btn-details" onclick="location.href='/product?id=${p.id}'">View Full Details</button>
+                                    <button class="btn-cart" onclick="location.href='/cart'">Add To Cart</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    grid.innerHTML = '<p style="font-size: 1.2rem; color: #666;">No products available in the database yet. Admin needs to add some!</p>';
+                }
+            } catch (err) {
+                console.error('Failed to load products:', err);
+                document.getElementById('productGrid').innerHTML = '<p>Connection Error. Please try again later.</p>';
+            }
+        }
+        window.onload = loadProducts;
+    </script>
+</body>
+
+</html>
